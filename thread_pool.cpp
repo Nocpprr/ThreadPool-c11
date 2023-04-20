@@ -74,6 +74,7 @@ int main() {
     thread_pool.init();
     for(int i = 0; i < 20; ++i) {
         auto ret = thread_pool.commit(func, i);
+        int rec = ret.get();
     }
     std::this_thread::sleep_for(std::chrono::seconds(20));
     return 0;
